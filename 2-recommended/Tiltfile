@@ -9,7 +9,7 @@ local_resource(
   trigger_mode=TRIGGER_MODE_MANUAL)
 
 # Add a live_update rule to our docker_build.
-docker_build('example-html', '.', live_update=[
+docker_build('example-html-image', '.', live_update=[
   sync('.', '/app'),
   run('./report-deployment-time.sh'),
 ])
