@@ -1,0 +1,3 @@
+# We use start-time.txt to record when builds are deployed.
+# Don't commit that to the repo.
+*/start-time.txt
