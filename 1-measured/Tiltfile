@@ -2,9 +2,9 @@ docker_build('example-html-image', '.')
 k8s_yaml('kubernetes.yaml')
 k8s_resource('example-html', port_forwards=8000, resource_deps=['deploy'])
 
-# Records the start time.
-# When the contents of this directory change, example-html will automatically re-deploy.
+# Records the time from a code change to a new process.
+# Normally, you would let Tilt do deploys automatically, but this
+# shows you how to set up a custom workflow that measures it.
 local_resource(
   'deploy',
-  'date +%s > start-time.txt',
-  trigger_mode=TRIGGER_MODE_MANUAL)
+  'date +%s > start-time.txt')
