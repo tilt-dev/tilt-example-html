@@ -1,5 +1,7 @@
 # tilt-example-html
 
+[![Build Status](https://circleci.com/gh/windmilleng/tilt-example-html/tree/master.svg?style=shield)](https://circleci.com/gh/windmilleng/tilt-example-html)
+
 An example project that demonstrates a live-updating server with nothing but Shell, HTML, and Kubernetes
 
 - [0-base](0-base): The simplest way to start
