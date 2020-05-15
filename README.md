@@ -1,6 +1,6 @@
 # tilt-example-html
 
-[![Build Status](https://circleci.com/gh/windmilleng/tilt-example-html/tree/master.svg?style=shield)](https://circleci.com/gh/windmilleng/tilt-example-html)
+[![Build Status](https://circleci.com/gh/tilt-dev/tilt-example-html/tree/master.svg?style=shield)](https://circleci.com/gh/tilt-dev/tilt-example-html)
 
 An example project that demonstrates a live-updating server with nothing but Shell, HTML, and Kubernetes. Read [doc](https://docs.tilt.dev/example_static_html.html).
 
