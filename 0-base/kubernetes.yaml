@@ -18,3 +18,6 @@ spec:
         image: example-html-image
         ports:
         - containerPort: 8000
+        env:
+        - name: MY_ENV
+          value: example-html-image
