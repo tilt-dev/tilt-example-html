@@ -1,3 +1,13 @@
 docker_build('example-html-image', '.')
-k8s_yaml('kubernetes.yaml')
+
+decoded_yaml=decode_yaml(read_file('kubernetes.yaml'))
+container=decoded_yaml["spec"]["template"]["spec"]["containers"][0]
+container["livenessProbe"].update({"httpGet": None})
+container["livenessProbe"].update({"exec": {"command": ["echo"]}})
+yaml=encode_yaml(decoded_yaml)
+
+# toggle between these two lines to flip between probes.
+k8s_yaml(yaml)
+#k8s_yaml('kubernetes.yaml')
+
 k8s_resource('example-html', port_forwards=8000)
