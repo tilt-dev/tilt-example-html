@@ -14,3 +14,8 @@ docker_build('example-html-image', '.', live_update=[
   run('./report-deployment-time.sh'),
   run('sed -i "s/Hello cats/Congratulations, you set up live_update/g" index.html'),
 ])
+
+docker_build('example-html-image-nonmatching', '.', dockerfile_contents="""
+FROM busybox
+ENTRYPOINT sleep 1000
+""")

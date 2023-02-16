@@ -14,7 +14,11 @@ spec:
         app: example-html
     spec:
       containers:
+      - name: example-html-nonmatching1
+        image: example-html-image-nonmatching
       - name: example-html
         image: example-html-image
         ports:
         - containerPort: 8000
+      - name: example-html-nonmatching2
+        image: example-html-image-nonmatching
