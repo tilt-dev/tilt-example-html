@@ -18,3 +18,24 @@ spec:
         image: example-html-image
         ports:
         - containerPort: 8000
+        volumeMounts:
+        - name: volume
+          mountPath: /pvc/
+      volumes: 
+      - name: volume
+        persistentVolumeClaim:
+          claimName: test
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: test
+  labels:
+    app: test
+spec:
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Mi
