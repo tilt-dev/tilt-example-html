@@ -1,3 +1,5 @@
-docker_build('example-html-image', '.')
+
+print('in tiltfile: ' + os.getenv('TOKEN', ''))
+docker_build('example-html-image', '.', build_args={'TOKEN': os.getenv('TOKEN', '')})
 k8s_yaml('kubernetes.yaml')
 k8s_resource('example-html', port_forwards=8000)
