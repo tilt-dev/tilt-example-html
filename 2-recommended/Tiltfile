@@ -6,7 +6,7 @@ k8s_resource('example-html', port_forwards=8000, resource_deps=['deploy'])
 # shows you how to set up a custom workflow that measures it.
 local_resource(
   'deploy',
-  'python now.py > start-time.txt')
+  'python3 now.py > start-time.txt')
 
 # Add a live_update rule to our docker_build.
 docker_build('example-html-image', '.', live_update=[
