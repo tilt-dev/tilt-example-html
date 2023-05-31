@@ -1,3 +1,4 @@
-docker_build('example-html-image', '.')
+docker_build('example-html-image', '.',
+             live_update=[sync('.', '/app')])
 k8s_yaml('kubernetes.yaml')
 k8s_resource('example-html', port_forwards=8000)
