@@ -1,4 +1,4 @@
 FROM busybox
 WORKDIR /app
-ADD . .
+ADD 0-base/ .
 ENTRYPOINT ./main.sh
