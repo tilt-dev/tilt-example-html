@@ -1,18 +1,16 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: example-html
   labels:
     app: example-html
 spec:
-  selector:
-    matchLabels:
-      app: example-html
   template:
     metadata:
       labels:
         app: example-html
     spec:
+      restartPolicy: Never
       containers:
       - name: example-html
         image: example-html-image
