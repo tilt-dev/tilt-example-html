@@ -1,3 +1,6 @@
-docker_build('example-html-image', '.')
+custom_build('example-html-image',
+             'docker build -t $EXPECTED_REF . && docker push $EXPECTED_REF && docker image rm $EXPECTED_REF',
+             ['.'],
+             skips_local_docker=True)
 k8s_yaml('kubernetes.yaml')
 k8s_resource('example-html', port_forwards=8000)
